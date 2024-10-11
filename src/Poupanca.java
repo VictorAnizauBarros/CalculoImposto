@@ -1,10 +1,10 @@
-public class Poupanca extends Investimento{
-    public double valorInicial;
-    public double taxaJuros = 0.005;
-    public double tempo;
+public class Poupanca extends Investimento {
+    public Poupanca(double valorInicial, double taxaRendimento, int periodo) {
+        super(valorInicial, taxaRendimento, periodo);
+    }
 
-    public double calculoInvestimento(){
-        double montante = valorInicial * Math.pow(1 + taxaJuros, tempo);
-        return montante;
+    @Override
+    public double calcularRendimento() {
+        return valorInicial * Math.pow(1 + taxaRendimento / 100, periodo);
     }
 }
